@@ -1,0 +1,3 @@
+destinations=[{"name":"SFPART067443","url":"https://SFPART067443.dest","proxyHost":"http://127.0.0.1","proxyPort":"8887"}]
+cds_requires={"SFPART067443":{"impl":"@sap/cds/libx/_runtime/remote/Service.js","external":true,"kind":"odata-v2","model":"srv/external/SFPART067443","credentials":{"destination":"SFPART067443","path":"cust_AccrualLookupByTimeAccountType"}}}
+VCAP_SERVICES={}

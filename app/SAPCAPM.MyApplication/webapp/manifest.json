@@ -1,0 +1,156 @@
+{
+  "_version": "1.44.0",
+  "sap.app": {
+    "id": "SAPCAPM.MyApplication",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.8.6",
+      "toolsId": "96811dc7-d7bb-4904-8889-ff1b247bbf4b"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "service/SAPCAPM/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "SAPCAPM-MyApplication-inbound": {
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          },
+          "semanticObject": "SAPCAPMMyApplication",
+          "action": "display",
+          "title": "{{flpTitle}}",
+          "subTitle": "{{flpSubtitle}}",
+          "icon": ""
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.104.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ushell": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "SAPCAPM.MyApplication.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "cust_AccrualLookupByTimeAccountTypeList",
+          "target": "cust_AccrualLookupByTimeAccountTypeList"
+        },
+        {
+          "pattern": "cust_AccrualLookupByTimeAccountType({key}):?query:",
+          "name": "cust_AccrualLookupByTimeAccountTypeObjectPage",
+          "target": "cust_AccrualLookupByTimeAccountTypeObjectPage"
+        }
+      ],
+      "targets": {
+        "cust_AccrualLookupByTimeAccountTypeList": {
+          "type": "Component",
+          "id": "cust_AccrualLookupByTimeAccountTypeList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "entitySet": "cust_AccrualLookupByTimeAccountType",
+              "variantManagement": "Page",
+              "navigation": {
+                "cust_AccrualLookupByTimeAccountType": {
+                  "detail": {
+                    "route": "cust_AccrualLookupByTimeAccountTypeObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "cust_AccrualLookupByTimeAccountTypeObjectPage": {
+          "type": "Component",
+          "id": "cust_AccrualLookupByTimeAccountTypeObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "entitySet": "cust_AccrualLookupByTimeAccountType"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "lcap.SAPCAPM"
+  }
+}

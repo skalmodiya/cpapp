@@ -1,0 +1,98 @@
+/* checksum : 42596cc1c189b07c48ced8c5af2775e8 */
+@cds.external : true
+@m.IsDefaultEntityContainer : 'true'
+service SFPART067443 {};
+
+@cds.external : true
+@cds.persistence.skip : true
+@sap.label : 'Accrual Lookup By Time Account Type'
+@sap.creatable : 'true'
+@sap.updatable : 'true'
+@sap.upsertable : 'true'
+@sap.deletable : 'true'
+entity SFPART067443.cust_AccrualLookupByTimeAccountType {
+  @sap.required : 'false'
+  @sap.creatable : 'true'
+  @sap.updatable : 'true'
+  @sap.upsertable : 'true'
+  @sap.visible : 'true'
+  @sap.sortable : 'true'
+  @sap.filterable : 'true'
+  @sap.label : 'externalCode'
+  key externalCode : Integer64 not null;
+  @sap.required : 'false'
+  @sap.creatable : 'false'
+  @sap.updatable : 'false'
+  @sap.upsertable : 'false'
+  @sap.visible : 'true'
+  @sap.sortable : 'true'
+  @sap.filterable : 'true'
+  @sap.label : 'Created By'
+  createdBy : String(100) null;
+  @odata.Type : 'Edm.DateTimeOffset'
+  @sap.required : 'false'
+  @sap.creatable : 'false'
+  @sap.updatable : 'false'
+  @sap.upsertable : 'false'
+  @sap.visible : 'true'
+  @sap.sortable : 'true'
+  @sap.filterable : 'true'
+  @sap.label : 'Created On'
+  createdDateTime : DateTime null;
+  @sap.required : 'false'
+  @sap.creatable : 'true'
+  @sap.updatable : 'true'
+  @sap.upsertable : 'true'
+  @sap.visible : 'true'
+  @sap.sortable : 'true'
+  @sap.filterable : 'true'
+  @sap.label : 'Accrual Amount'
+  cust_AccrualAmount : Decimal null;
+  @sap.required : 'false'
+  @sap.creatable : 'true'
+  @sap.updatable : 'true'
+  @sap.upsertable : 'true'
+  @sap.visible : 'true'
+  @sap.sortable : 'true'
+  @sap.filterable : 'true'
+  @sap.label : 'Time Account Type'
+  cust_TimeAccountType : String(128) null;
+  @sap.required : 'false'
+  @sap.creatable : 'false'
+  @sap.updatable : 'false'
+  @sap.upsertable : 'false'
+  @sap.visible : 'true'
+  @sap.sortable : 'true'
+  @sap.filterable : 'true'
+  @sap.label : 'externalName'
+  externalName : String(128) null;
+  @sap.required : 'false'
+  @sap.creatable : 'false'
+  @sap.updatable : 'false'
+  @sap.upsertable : 'false'
+  @sap.visible : 'true'
+  @sap.sortable : 'true'
+  @sap.filterable : 'true'
+  @sap.label : 'Last Modified By'
+  lastModifiedBy : String(100) null;
+  @odata.Type : 'Edm.DateTimeOffset'
+  @sap.required : 'false'
+  @sap.creatable : 'false'
+  @sap.updatable : 'false'
+  @sap.upsertable : 'false'
+  @sap.visible : 'true'
+  @sap.sortable : 'true'
+  @sap.filterable : 'true'
+  @sap.label : 'Last Modified Date'
+  lastModifiedDateTime : DateTime null;
+  @sap.required : 'false'
+  @sap.creatable : 'false'
+  @sap.updatable : 'false'
+  @sap.upsertable : 'false'
+  @sap.visible : 'true'
+  @sap.sortable : 'true'
+  @sap.filterable : 'true'
+  @sap.label : 'Record Status'
+  mdfSystemRecordStatus : String(255) null;
+};
+
